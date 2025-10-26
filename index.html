@@ -4,28 +4,100 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DuckLwng</title>
+    <title>Duc Luong | Links</title>
     <link rel="icon" href="./devpan.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        /* Reset Box Sizing */
+        *, *::before, *::after {
+            box-sizing: border-box; 
+        }
+
+        /* ================================================= */
+        /* === CÀI ĐẶT CHUNG (DEFAULT: DARK MODE) === */
+        /* ================================================= */
         body {
             height: 100%;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: radial-gradient(hsl(189, 88%, 74%), rgb(53, 110, 156));
-            color: white;
-            overflow-x: hidden;
+            
+            background-color: #121212; 
+            
+            color: #f0f0f0;
+            overflow-x: hidden; 
+            padding: 20px 0;
+            min-height: 100vh;
+            box-sizing: border-box;
+            
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease; 
+            
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
         }
+        
+        .about-box a {
+            text-decoration: none;
+            color: #764ba2; 
+            transition: color 0.3s ease;
+        }
+
+        /* Dùng strong thay vì ** */
+        .about-box p strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
 
         .container {
             text-align: center;
-            padding-top: 50px;
+            
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 12px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            
+            padding: 40px;
+            margin: 20px;
+            max-width: 450px; 
+            width: calc(100% - 40px);
+            transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease, transform 0.1s linear;
+            
+            perspective: 1000px;
         }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container > * {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        /* Animation Delays */
+        .lang-switch-wrapper { animation-delay: 0.1s; }
+        .theme-switch-wrapper { animation-delay: 0.15s; }
+        .avatar { animation-delay: 0.2s; }
+        h3 { animation-delay: 0.3s; }
+        .tagline { animation-delay: 0.4s; }
+        .about-box { animation-delay: 0.5s; }
+        .button:nth-of-type(1) { animation-delay: 0.6s; }
+        .button:nth-of-type(2) { animation-delay: 0.7s; }
+        .button:nth-of-type(3) { animation-delay: 0.8s; }
+        .button:nth-of-type(4) { animation-delay: 0.9s; }
+        .button:nth-of-type(5) { animation-delay: 1.0s; }
+
 
         .avatar {
             border-radius: 50%;
@@ -34,146 +106,575 @@
             width: 100px;
             height: 100px;
             object-fit: cover;
-            border: 1px solid #55afeb;
+            border: 3px solid #764ba2;
+            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.05), 0 0 15px rgba(118, 75, 162, 0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
         }
 
         .avatar:hover {
-            color: white;
-            transform: scale(1.1);
-            box-shadow: 0px 10px 30px rgba(20, 127, 189, 0.493);
+            transform: scale(1.03);
+            box-shadow: 0 0 0 5px rgba(118, 75, 162, 0.2), 0 0 25px rgba(118, 75, 162, 0.6);
         }
 
         h3 {
-            font-family: 'Merriweather', serif;
-            font-weight: bold;
-            font-size: 22px;
-            margin: 10px 0 8px 0;
+            font-weight: 700;
+            font-size: 28px; 
+            margin: 15px 0 5px 0;
             color: #ffffff;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
         }
-
-        p {
-            font-family: 'Times New Roman', Times, serif;
-            color: #ffffff;
-            margin-bottom: 30px;
-        }
-
-        i {
-            vertical-align: middle;
-        }
-
-        .grid-container {
-            margin-right: 50px;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            align-items: center;
-            justify-items: center;
-            text-align: center;
-        }
-
-        .grid-container i {
-            margin-left: 50px;
-            justify-self: flex-start;
-        }
-
-        .button {
-            margin-bottom: 20px;
-            background-color: white;
-            border: 0;
-            width: 300px;
-            padding: 15px 0;
-            border-radius: 100px;
-            font-family: 'Lora', serif;
-            font-weight: bold;
+        
+        .tagline {
+            color: #aaa;
             font-size: 15px;
-            transition-duration: 0.3s;
-            transition-property: color, background-color, transform, box-shadow;
-            -webkit-box-shadow: 0px 11px 22px -9px #000000;
-            box-shadow: 0px 11px 22px -9px #000000;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        /* === (MỚI) CSS CHO CHUYỂN NGÔN NGỮ === */
+        .lang-switch-wrapper {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 15px; /* Tách khỏi theme switch */
+        }
+        .lang-switch-wrapper span {
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .lang-link {
+            text-decoration: none;
+            color: #888;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s ease, font-weight 0.3s ease;
             cursor: pointer;
+        }
+        .lang-link:hover {
+            color: #764ba2;
+        }
+        .lang-link.active {
+            color: #ffffff;
+            font-weight: 700;
+        }
+        /* ================================== */
+        
+        /* Chuyển đổi Chủ đề (Theme Switch) */
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; 
+            margin-bottom: 25px; 
+            gap: 8px;
+        }
+
+        .theme-switch-wrapper .fa-sun, .theme-switch-wrapper .fa-moon {
+            font-size: 18px;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+        
+        .theme-switch-wrapper .fa-moon {
+             color: #ffffff;
+        }
+
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 45px; 
+            height: 25px;
+        }
+
+        .theme-switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #333;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 19px; 
+            width: 19px; 
+            left: 3px;   
+            bottom: 3px; 
+            background-color: #eee;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #764ba2;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(20px); 
+            background-color: #fff; 
+        }
+
+        /* Hộp Giới thiệu */
+        .about-box {
+            background: rgba(40, 40, 40, 0.8);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 30px; 
+            border: 1px solid #333;
+            text-align: left; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .about-box h4 {
+            font-weight: 600;
+            font-size: 18px;
+            color: #ffffff;
+            margin: 0 0 10px 0; 
+            padding-bottom: 8px;
+            border-bottom: 1px solid #444;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .about-box p {
+            font-weight: 400;
+            color: #ccc;
+            margin-bottom: 0;
+            font-size: 15px; 
+            line-height: 1.6; 
+            transition: color 0.3s ease;
+        }
+
+        /* Nút Liên kết (Buttons) */
+        .button {
+            position: relative;
+            overflow: hidden;
+
+            margin-bottom: 15px; 
+            background-color: #282828;
+            border: 1px solid #764ba2;
+            color: #ffffff;
+            text-decoration: none; 
+            
+            width: 100%; 
+            max-width: 380px; 
+            padding: 15px 20px; 
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 16px; 
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            z-index: 1;
+            
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* (MỚI) Style cho span văn bản bên trong nút */
+        .button span {
+            transition: inherit; /* Kế thừa transition của nút cha */
+        }
+
+        .button .fas, .button .fab {
+            font-size: 18px;
+            transition: color 0.3s ease;
         }
 
         .button:hover {
-            color: white;
-            background-color: rgb(7, 85, 158);
-            transform: scale(1.1);
-            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            background-color: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(118, 75, 162, 0.4);
+            border: 1px solid #764ba2;
+        }
+        
+        .button:hover .fas, .button:hover .fab {
+            color: #ffffff;
         }
 
+        .button:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Hiệu ứng gợn sóng (ripple) */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            animation: ripple-animation 0.6s linear forwards;
+            transform: scale(0);
+            pointer-events: none;
+            opacity: 0;
+            z-index: 0;
+        }
+
+        @keyframes ripple-animation {
+            from { transform: scale(0); opacity: 0.7; }
+            to { transform: scale(4); opacity: 0; }
+        }
+
+
+        /* Responsive */
         @media only screen and (max-width: 600px) {
-
             .container {
-                text-align: center;
-                padding-top: 30px;
-            }
-
-            .avatar {
-                border-radius: 50%;
-                display: block;
-                margin: 0 auto;
-                width: 100px;
-                height: 100px;
-                object-fit: cover;
-            }
-
-            .avatar:hover {
-                color: white;
-                transform: scale(1.1);
-                box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+                padding: 30px 20px; 
+                margin: 15px;
+                width: calc(100% - 30px);
             }
 
             h3 {
-                font-family: 'Lora', serif;
-                font-weight: bold;
-                margin: 10px 0 8px 0;
-                color: #ffffff;
-                font-size: 22px;
+                font-size: 24px;
             }
-
-            p {
-                font-family: 'Times New Roman', Times, serif;
-                color: #ffffff;
-                margin-bottom: 30px;
+            
+            .button {
+                padding: 12px 15px; 
+                font-size: 15px;
+                max-width: 100%;
+            }
+            
+            .about-box {
+                padding: 15px 20px;
             }
         }
+        
+        
+        /* ===================================== */
+        /* === CSS CHO CHẾ ĐỘ SÁNG (LIGHT MODE) === */
+        /* ===================================== */
+        
+        body.light-mode {
+            background-color: #f7f7f7;
+            color: #333;
+            background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        body.light-mode .container {
+            background: rgba(255, 255, 255, 0.9); 
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.light-mode .about-box p strong {
+            color: #222;
+        }
+        
+        /* (MỚI) CSS Ngôn ngữ cho Light Mode */
+        body.light-mode .lang-switch-wrapper span {
+            color: #888;
+        }
+        body.light-mode .lang-link {
+            color: #888;
+        }
+        body.light-mode .lang-link.active {
+            color: #222;
+            font-weight: 700;
+        }
+        body.light-mode .lang-link:hover {
+            color: #764ba2;
+        }
+        
+        body.light-mode .about-box a {
+             text-decoration: none;
+             color: #764ba2; 
+        }
+
+        body.light-mode h3 { color: #222; }
+        body.light-mode .tagline { color: #666; }
+        body.light-mode .about-box h4 { color: #222; }
+        body.light-mode .about-box p { color: #555; }
+        
+        body.light-mode .about-box {
+            background: rgba(240, 240, 240, 0.8);
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        body.light-mode .about-box h4 {
+             border-bottom: 1px solid #ddd;
+        }
+
+        body.light-mode .avatar {
+            border: 3px solid #764ba2;
+            box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05), 0 0 15px rgba(118, 75, 162, 0);
+        }
+        
+        body.light-mode .avatar:hover {
+            box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05), 0 0 25px rgba(118, 75, 162, 0.6); 
+        }
+
+        body.light-mode .button {
+            background-color: #ffffff; 
+            border: 1px solid #ccc;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-decoration: none; 
+        }
+
+        body.light-mode .button:hover {
+            background-color: #764ba2;
+            color: #ffffff;
+            border: 1px solid #764ba2;
+            box-shadow: 0 6px 15px rgba(118, 75, 162, 0.3);
+        }
+        
+        body.light-mode .button:hover .fas, body.light-mode .button:hover .fab {
+            color: #ffffff;
+        }
+        
+        /* Theme Switch Light Mode */
+        body.light-mode .theme-switch-wrapper .fa-sun {
+            color: #764ba2; 
+        }
+        body.light-mode .theme-switch-wrapper .fa-moon {
+            color: #999;
+        }
+        
+        body.light-mode .slider {
+             background-color: #ccc;
+        }
+        
+        body.light-mode .slider:before {
+            background-color: #fff; 
+        }
+        
+        body.light-mode input:checked + .slider {
+            background-color: #764ba2;
+        }
+        
+        body.light-mode input:checked + .slider:before {
+            background-color: #fff;
+        }
+        /* === KẾT THÚC LIGHT MODE === */
+        
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="main-container">
+        
+        <div class="lang-switch-wrapper">
+            <a class="lang-link" id="lang-vi">VI</a>
+            <span>|</span>
+            <a class="lang-link" id="lang-en">EN</a>
+        </div>
+        
+        <div class="theme-switch-wrapper">
+            <i class="fas fa-sun"></i>
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <i class="fas fa-moon"></i>
+        </div>
+        
         <img class="avatar" src="img/img2.jpg" alt="Avatar">
-        <h3>Duc Luong</h3>
-        <p>about<br>Tôi là người luôn tìm kiếm sự cân bằng giữa logic và sáng tạo.<br> 
-            Tôi đam mê những ván cờ đầy thử thách, nơi mỗi nước đi đều cần sự tính toán tỉ mỉ. <br>
-            Ngược lại, tôi cũng rất thích vẽ và tạo ra những thứ linh tinh <br>
-            đó là cách tôi cho phép bản thân được thoải mái, 
-            mày mò và biến những ý tưởng bất chợt thành hiện thực.</p>
-
-        <button class="button" onclick="location.href = 'tel:+84359058598'">
-            <div class="grid-container">
-                <i class="fas fa-phone-alt"></i>&nbsp;Call
-            </div>
-        </button><br>
-        <button class="button" onclick="location.href = 'https://www.facebook.com/DuckLwng'">
-            <div class="grid-container">
-                <i class="fab fa-facebook"></i>&nbsp;Facebook
-            </div>
-            </button><br>
-        <button class=" button" onclick="location.href = 'https://discord.gg/b4fBHFBf'">
-                    <div class="grid-container">
-                        <i class="fab fa-discord"></i>&nbsp;Discord
-                    </div>
-        </button><br>
-        <button class="button" onclick="location.href = 'https://www.tiktok.com/@duc_luong25?_t=ZS-90qN0p4SxIv&_r=1'">
-            <div class="grid-container">
-                <i class="fab fa-tiktok"></i>&nbsp;TikTok
-            </div>
-        </button><br>
-        <button class="button" onclick="location.href = 'https://github.com/DucLuong2507'">
-            <div class="grid-container">
-                <i class="fab fa-github"></i>&nbsp;GitHub
-            </div>
-        </button>
+        <h3>DUC LUONG</h3>
+        <p class="tagline" data-key="tagline">Bruhhh</p>
+        
+          <div class="about-box">
+            <h4 data-key="aboutTitle">GIỚI THIỆU</h4>
+            <p data-key="aboutText">
+                Tôi là người luôn tìm kiếm sự cân bằng giữa <strong>Logic</strong> và <strong>Sáng tạo</strong>. 
+                Đam mê những ván cờ đầy thử thách và sự tính toán tỉ mỉ, đồng thời cũng yêu thích việc vẽ vời, 
+                mày mò để biến những ý tưởng bất chợt thành hiện thực.
+            </p>
+        </div>
+        
+        <a class="button" href="https://github.com/DucLuong2507" target="_blank">
+            <i class="fab fa-github"></i>
+            <span data-key="btnGithub">VIEW GITHUB PORTFOLIO</span>
+        </a>
+        <a class="button" href="tel:+84359058598">
+            <i class="fas fa-phone-alt"></i>
+            <span data-key="btnCall">GET IN TOUCH (CALL)</span>
+        </a>
+        <a class="button" href="https://www.facebook.com/DuckLwng" target="_blank">
+            <i class="fab fa-facebook"></i>
+            <span data-key="btnFacebook">FACEBOOK PROFILE</span>
+        </a>
+        <a class="button" href="https://discord.gg/b4fBHFBf" target="_blank">
+            <i class="fab fa-discord"></i>
+            <span data-key="btnDiscord">DISCORD SERVER</span>
+        </a>
+        <a class="button" href="https://www.tiktok.com/@duc_luong25?_t=ZS-90qN0p4SxIv&_r=1" target="_blank">
+            <i class="fab fa-tiktok"></i>
+            <span data-key="btnTiktok">FOLLOW ON TIKTOK</span>
+        </a>
+        
     </div>
-</body>
+    
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const mainContainer = document.getElementById('main-container');
 
+        // === (MỚI) TỪ ĐIỂN DỊCH THUẬT ===
+        const translations = {
+            'en': {
+                'tagline': 'Developer & Creative Thinker',
+                'aboutTitle': 'ABOUT ME',
+                'aboutText': 'I am always seeking a balance between <strong>Logic</strong> and <strong>Creativity</strong>. Passionate about challenging chess games and meticulous calculations, I also love drawing and tinkering to turn fleeting ideas into reality.',
+                'btnGithub': 'VIEW GITHUB PORTFOLIO',
+                'btnCall': 'GET IN TOUCH (CALL)',
+                'btnFacebook': 'FACEBOOK PROFILE',
+                'btnDiscord': 'DISCORD SERVER',
+                'btnTiktok': 'FOLLOW ON TIKTOK'
+            },
+            'vi': {
+                'tagline': 'Lập trình viên & Người tư duy sáng tạo',
+                'aboutTitle': 'GIỚI THIỆU',
+                'aboutText': 'Tôi là người luôn tìm kiếm sự cân bằng giữa <strong>Logic</strong> và <strong>Sáng tạo</strong>. Đam mê những ván cờ đầy thử thách và sự tính toán tỉ mỉ, đồng thời cũng yêu thích việc vẽ vời, mày mò để biến những ý tưởng bất chợt thành hiện thực.',
+                'btnGithub': 'XEM HỒ SƠ GITHUB',
+                'btnCall': 'LIÊN HỆ (GỌI ĐIỆN)',
+                'btnFacebook': 'TRANG FACEBOOK',
+                'btnDiscord': 'MÁY CHỦ DISCORD',
+                'btnTiktok': 'THEO DÕI TRÊN TIKTOK'
+            }
+        };
+
+        const langLinkVI = document.getElementById('lang-vi');
+        const langLinkEN = document.getElementById('lang-en');
+
+        // === (MỚI) HÀM THAY ĐỔI NGÔN NGỮ ===
+        function setLanguage(lang) {
+            // 1. Dịch các phần tử
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    // Dùng innerHTML để render các thẻ <strong>
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // 2. Cập nhật style cho nút active
+            if (lang === 'vi') {
+                langLinkVI.classList.add('active');
+                langLinkEN.classList.remove('active');
+            } else {
+                langLinkEN.classList.add('active');
+                langLinkVI.classList.remove('active');
+            }
+
+            // 3. Lưu lựa chọn vào localStorage
+            localStorage.setItem('language', lang);
+        }
+
+        // === LOGIC CHỦ ĐỀ (Theme) ===
+        function enableLightMode() {
+            body.classList.add('light-mode');
+            themeToggle.checked = true;
+            localStorage.setItem('theme', 'light');
+            document.querySelector('.theme-switch-wrapper .fa-sun').style.color = '#764ba2'; 
+            document.querySelector('.theme-switch-wrapper .fa-moon').style.color = '#999';
+        }
+        
+        function disableLightMode() {
+            body.classList.remove('light-mode');
+            themeToggle.checked = false;
+            localStorage.setItem('theme', 'dark');
+            document.querySelector('.theme-switch-wrapper .fa-sun').style.color = '#999';
+            document.querySelector('.theme-switch-wrapper .fa-moon').style.color = '#ffffff'; 
+        }
+        
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                enableLightMode();
+            } else {
+                disableLightMode();
+            }
+        });
+        
+        // === KHỞI TẠO KHI TẢI TRANG ===
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Khởi tạo Chủ đề
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                enableLightMode();
+            } else {
+                disableLightMode(); 
+            }
+
+            // 2. (MỚI) Khởi tạo Ngôn ngữ
+            const savedLang = localStorage.getItem('language') || 'vi'; // Mặc định là Tiếng Việt
+            setLanguage(savedLang);
+
+            // 3. (MỚI) Thêm sự kiện click cho nút ngôn ngữ
+            langLinkVI.addEventListener('click', (e) => {
+                e.preventDefault();
+                setLanguage('vi');
+            });
+            langLinkEN.addEventListener('click', (e) => {
+                e.preventDefault();
+                setLanguage('en');
+            });
+            
+            // 4. Khởi tạo hiệu ứng gợn sóng (Ripple)
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                if (!button.href.startsWith('tel:') && !button.href.startsWith('mailto:')) {
+                    button.setAttribute('target', '_blank');
+                }
+
+                button.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple');
+                    
+                    const rect = button.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = `${size}px`;
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    this.appendChild(ripple);
+                    
+                    ripple.addEventListener('animationend', () => {
+                        ripple.remove();
+                    });
+                });
+            });
+
+            // 5. Khởi tạo hiệu ứng Tilt 3D
+            const tiltFactor = 5; 
+            mainContainer.addEventListener('mousemove', (e) => {
+                if (window.innerWidth > 600) {
+                    const rect = mainContainer.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    const mouseX = e.clientX;
+                    const mouseY = e.clientY;
+                    const rotateY = ((mouseX - centerX) / (rect.width / 2)) * tiltFactor;
+                    const rotateX = ((mouseY - centerY) / (rect.height / 2)) * -tiltFactor;
+                    mainContainer.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                }
+            });
+
+            mainContainer.addEventListener('mouseleave', () => {
+                if (window.innerWidth > 600) {
+                    mainContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                }
+            });
+        });
+    </script>
+    
+</body>
 </html>
